@@ -1,0 +1,12 @@
+import { CardType } from '../constants';
+
+export interface PaymentMethod {
+  id: string;
+  clientId: string;
+  type: CardType;
+  last4: string;
+  expiryMonth: number;
+  expiryYear: number;
+  isDefault: boolean;
+  createdAt: Date;
+}
