@@ -1,12 +1,13 @@
-import { ServiceType } from '../constants';
+import { ServiceType } from "../constants";
+import type { SitterProfile, Pet } from "../entities";
 
 /** Search/filter state for the sitter discovery page */
-export interface SearchFilters {
+export interface SearchFiltersType {
   serviceType: string;
   location: string;
-  startDate: string | null;
+  startDate: Date | string | null;
   startTime: string;
-  endDate: string | null;
+  endDate: Date | string | null;
   endTime: string;
   selectedPets: string[];
   /** [min, max] price range */
@@ -60,8 +61,82 @@ export interface ServicesPricingData {
 
 /** Sort options for sitter search results */
 export type SortOption =
-  | 'rating'
-  | 'price_low'
-  | 'price_high'
-  | 'review_count'
-  | 'distance';
+  | "rating"
+  | "price_low"
+  | "price_high"
+  | "review_count"
+  | "distance";
+
+/**
+ * Sitter card data for search results.
+ * Picks shared fields directly from SitterProfile; adds computed/UI-only fields.
+ */
+export interface SitterDisplay
+  extends Pick<SitterProfile, "id" | "name" | "rating" | "reviewCount" | "location" | "photoUrl"> {
+  /** Nested lat/lng derived from SitterProfile.lat / SitterProfile.lng */
+  coordinates: { lat: number; lng: number };
+  /** Representative price derived from the sitter's service list */
+  price: number;
+  /** Short excerpt from the sitter's most recent review */
+  reviewSnippet: string;
+  /** Enabled service names derived from SitterProfile.services */
+  services: string[];
+  /** Derived from SitterProfile.home.type === 'house' */
+  hasHouse: boolean;
+  /** Derived from SitterProfile.home.type === 'apartment' */
+  hasApartment: boolean;
+  /** Derived from SitterProfile.home.hasFencedYard */
+  hasFencedYard: boolean;
+  allowsDogsOnFurniture: boolean;
+}
+
+/**
+ * Full sitter profile data for the public profile page.
+ * Extends SitterDisplay and picks additional fields from SitterProfile;
+ * uses simplified/UI-friendly shapes for home, pets, services, and reviews.
+ */
+export interface SitterProfileDisplay
+  extends SitterDisplay,
+    Pick<SitterProfile, "verified" | "responseTime" | "bio" | "photoGallery" | "availability" | "questionsForOwners"> {
+  detailedServices: ServiceSummary[];
+  acceptedPets: {
+    dogSizes: string[];
+    cats: boolean;
+    dogAges: string;
+    catAges: string;
+  };
+  /** Simplified home view (subset of SitterHome with UI-friendly field names) */
+  home: {
+    type: string;
+    hasFencedYard: boolean;
+    hasKids: boolean;
+    allowsPetsOnFurniture: boolean;
+  };
+  reviews: ReviewDisplay[];
+  cancellationPolicy: {
+    type: string;
+    description: string;
+  };
+}
+
+/**
+ * Simplified pet for display in dropdowns/cards.
+ * Picks shared fields from Pet; adds UI-only selection flag.
+ */
+export interface PetDisplay extends Pick<Pet, "id" | "name" | "breed" | "photoUrl"> {
+  selected?: boolean; // UI-only flag
+}
+
+/**
+ * Minimal review data needed for display in the UI.
+ * Omits entity-only fields (bookingId, reviewerId, sitterId, etc.) that are
+ * irrelevant to rendering. date accepts both Date objects and pre-formatted strings.
+ */
+export interface ReviewDisplay {
+  id: string;
+  reviewerName: string;
+  reviewerPhotoUrl: string | null;
+  rating: number;
+  text: string;
+  date: Date | string;
+}

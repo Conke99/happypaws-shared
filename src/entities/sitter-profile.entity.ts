@@ -1,4 +1,4 @@
-import { ServiceType, HomeType, CancellationPolicyType } from '../constants';
+import { ServiceType, HomeType, CancellationPolicyType } from "../constants";
 
 export interface SitterService {
   type: ServiceType;
@@ -47,9 +47,12 @@ export interface SitterProfile {
   id: string;
   userId: string;
   bio: string;
+  photoUrl: string;
+  name: string;
   experience: string;
   languages: string[];
   photoGallery: string[];
+  location: string;
   rating: number;
   reviewCount: number;
   responseTime: string;
