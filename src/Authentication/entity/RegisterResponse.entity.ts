@@ -10,6 +10,12 @@ export class RegisterResponseEntity implements RegisterResponse {
   email!: string;
 
   @IsString()
+  firstName!: string;
+
+  @IsString()
+  lastName!: string;
+
+  @IsString()
   accessToken!: string;
 
   @IsString()
