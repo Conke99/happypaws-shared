@@ -5,5 +5,6 @@ export interface RegisterInput {
   firstName: string;
   lastName: string;
   password: string;
-  role: UserRole;
+  roles: UserRole[];
+  activeRole: UserRole;
 }

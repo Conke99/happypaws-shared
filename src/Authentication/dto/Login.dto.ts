@@ -9,9 +9,9 @@ export class LoginInputDto implements LoginInput {
   @IsString()
   password!: string;
 
-  @IsEnum(UserRole)
   @IsString()
-  role!: UserRole;
+  @IsEnum(UserRole)
+  activeRole!: UserRole;
 
   constructor(partial?: Partial<LoginInput>) {
     Object.assign(this, partial);

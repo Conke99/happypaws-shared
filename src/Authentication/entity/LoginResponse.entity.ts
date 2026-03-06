@@ -1,8 +1,8 @@
-import { IsArray, IsEnum, IsString } from 'class-validator';
-import type { RegisterResponse } from '../models/RegisterResponse';
+import { IsEnum, IsString } from 'class-validator';
+import type { LoginResponse } from '../models/LoginResponse';
 import { UserRole } from '../../constants';
 
-export class RegisterResponseEntity implements RegisterResponse {
+export class LoginResponseEntity implements LoginResponse {
   @IsString()
   id!: string;
 
@@ -18,14 +18,13 @@ export class RegisterResponseEntity implements RegisterResponse {
   @IsString()
   accessToken!: string;
 
-  @IsArray()
   @IsEnum(UserRole, { each: true })
   roles!: UserRole[];
 
   @IsEnum(UserRole)
   activeRole!: UserRole;
 
-  constructor(partial?: Partial<RegisterResponse>) {
+  constructor(partial?: Partial<LoginResponse>) {
     Object.assign(this, partial);
   }
 }

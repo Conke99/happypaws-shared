@@ -1,6 +1,6 @@
-import type { UserRole } from '../../constants';
+import { UserRole } from '../../constants';
 
-export interface RegisterResponse {
+export interface LoginResponse {
   id: string;
   email: string;
   firstName: string;
