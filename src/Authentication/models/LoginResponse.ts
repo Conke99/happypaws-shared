@@ -7,4 +7,5 @@ export interface LoginResponse {
   lastName: string;
   accessToken: string;
   roles: UserRole[];
+  activeRole: UserRole;
 }
