@@ -1,4 +1,4 @@
-import { IsArray, IsEnum, IsString } from 'class-validator';
+import { IsEnum, IsString } from 'class-validator';
 import { UserRole } from '../../constants';
 import type { RegisterInput } from '../models/RegisterInput';
 
@@ -15,9 +15,9 @@ export class RegisterInputDto implements RegisterInput {
   @IsString()
   password!: string;
 
-  @IsArray()
-  @IsEnum(UserRole, { each: true })
-  roles!: UserRole[];
+  @IsString()
+  @IsEnum(UserRole)
+  role!: UserRole;
 
   constructor(partial?: Partial<RegisterInput>) {
     Object.assign(this, partial);
