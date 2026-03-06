@@ -1,6 +1,6 @@
-import { IsArray, IsEnum, IsString } from "class-validator";
-import type { RegisterResponse } from "../models/RegisterResponse";
-import { UserRole } from "../../constants";
+import { IsArray, IsEnum, IsString } from 'class-validator';
+import type { RegisterResponse } from '../models/RegisterResponse';
+import { UserRole } from '../../constants';
 
 export class RegisterResponseEntity implements RegisterResponse {
   @IsString()

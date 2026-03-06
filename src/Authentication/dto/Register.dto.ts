@@ -1,6 +1,6 @@
-import { IsArray, IsEnum, IsString } from "class-validator";
-import { UserRole } from "../../constants";
-import type { RegisterInput } from "../models/RegisterInput";
+import { IsArray, IsEnum, IsString } from 'class-validator';
+import { UserRole } from '../../constants';
+import type { RegisterInput } from '../models/RegisterInput';
 
 export class RegisterInputDto implements RegisterInput {
   @IsString()
