@@ -5,11 +5,12 @@ export interface User {
   email: string;
   firstName: string;
   lastName: string;
-  phone: string;
-  photoUrl: string | null;
+  password: string;
+  phone?: string | null;
+  photoUrl?: string | null;
   role: UserRole;
   memberSince: Date;
-  verified: boolean;
+  verified?: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
