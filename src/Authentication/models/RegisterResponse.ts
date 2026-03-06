@@ -1,4 +1,4 @@
-import type { UserRole } from '../../constants';
+import type { UserRole } from "../../constants";
 
 export interface RegisterResponse {
   id: string;
@@ -6,5 +6,5 @@ export interface RegisterResponse {
   firstName: string;
   lastName: string;
   accessToken: string;
-  role: UserRole;
+  roles: UserRole[];
 }

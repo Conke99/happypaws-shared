@@ -1,4 +1,4 @@
-import { UserRole } from '../constants';
+import { UserRole } from "../constants";
 
 export interface User {
   id: string;
@@ -8,7 +8,7 @@ export interface User {
   password: string;
   phone?: string | null;
   photoUrl?: string | null;
-  role: UserRole;
+  role: UserRole[];
   memberSince: Date;
   verified?: boolean;
   createdAt: Date;
