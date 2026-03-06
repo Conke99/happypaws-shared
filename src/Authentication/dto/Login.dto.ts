@@ -1,15 +1,14 @@
-import { IsEnum, IsString } from 'class-validator';
+import { IsEmail, IsEnum, IsString } from 'class-validator';
 import type { LoginInput } from '../models/LoginInput';
-import { UserRole } from '../..';
+import { UserRole } from '../../constants';
 
 export class LoginInputDto implements LoginInput {
-  @IsString()
+  @IsEmail()
   email!: string;
 
   @IsString()
   password!: string;
 
-  @IsString()
   @IsEnum(UserRole)
   activeRole!: UserRole;
 
