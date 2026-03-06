@@ -7,4 +7,5 @@ export interface RegisterResponse {
   lastName: string;
   accessToken: string;
   roles: UserRole[];
+  activeRole: UserRole;
 }

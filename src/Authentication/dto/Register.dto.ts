@@ -19,10 +19,6 @@ export class RegisterInputDto implements RegisterInput {
   @IsEnum(UserRole, { each: true })
   roles!: UserRole[];
 
-  @IsString()
-  @IsEnum(UserRole)
-  activeRole!: UserRole;
-
   constructor(partial?: Partial<RegisterInput>) {
     Object.assign(this, partial);
   }
