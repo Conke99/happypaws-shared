@@ -1,4 +1,4 @@
-import { PetType } from '../constants';
+import type { PetType } from "../Pets/models/PetType";
 
 export interface PetTraits {
   /** 'yes' | 'no' | 'depends' */
@@ -11,7 +11,7 @@ export interface PetTraits {
   friendlyWithDogs?: string;
   /** 'yes' | 'no' | 'depends' */
   friendlyWithCats?: string;
-  energyLevel?: 'high' | 'moderate' | 'low';
+  energyLevel?: "high" | "moderate" | "low";
   canBeLeftAlone?: string;
   hasMedications?: boolean;
   specialCare?: string;
@@ -45,7 +45,7 @@ export interface Pet {
   age: string;
   /** 'puppy' | 'adult' | 'custom' */
   ageType: string;
-  gender: 'male' | 'female';
+  gender: "male" | "female";
   photoUrl: string | null;
   photoGallery: string[];
   description: string;
