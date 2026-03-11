@@ -1,5 +1,4 @@
-import { ServiceType } from "../constants";
-import type { SitterProfile, Pet } from "../entities";
+import type { SitterProfile } from '../entities';
 
 /** Search/filter state for the sitter discovery page */
 export interface SearchFiltersType {
@@ -60,19 +59,16 @@ export interface ServicesPricingData {
 }
 
 /** Sort options for sitter search results */
-export type SortOption =
-  | "rating"
-  | "price_low"
-  | "price_high"
-  | "review_count"
-  | "distance";
+export type SortOption = 'rating' | 'price_low' | 'price_high' | 'review_count' | 'distance';
 
 /**
  * Sitter card data for search results.
  * Picks shared fields directly from SitterProfile; adds computed/UI-only fields.
  */
-export interface SitterDisplay
-  extends Pick<SitterProfile, "id" | "name" | "rating" | "reviewCount" | "location" | "photoUrl"> {
+export interface SitterDisplay extends Pick<
+  SitterProfile,
+  'id' | 'name' | 'rating' | 'reviewCount' | 'location' | 'photoUrl'
+> {
   /** Nested lat/lng derived from SitterProfile.lat / SitterProfile.lng */
   coordinates: { lat: number; lng: number };
   /** Representative price derived from the sitter's service list */
@@ -96,8 +92,12 @@ export interface SitterDisplay
  * uses simplified/UI-friendly shapes for home, pets, services, and reviews.
  */
 export interface SitterProfileDisplay
-  extends SitterDisplay,
-    Pick<SitterProfile, "verified" | "responseTime" | "bio" | "photoGallery" | "availability" | "questionsForOwners"> {
+  extends
+    SitterDisplay,
+    Pick<
+      SitterProfile,
+      'verified' | 'responseTime' | 'bio' | 'photoGallery' | 'availability' | 'questionsForOwners'
+    > {
   detailedServices: ServiceSummary[];
   acceptedPets: {
     dogSizes: string[];
@@ -117,14 +117,6 @@ export interface SitterProfileDisplay
     type: string;
     description: string;
   };
-}
-
-/**
- * Simplified pet for display in dropdowns/cards.
- * Picks shared fields from Pet; adds UI-only selection flag.
- */
-export interface PetDisplay extends Pick<Pet, "id" | "name" | "breed" | "photoUrl"> {
-  selected?: boolean; // UI-only flag
 }
 
 /**
