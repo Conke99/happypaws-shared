@@ -1,14 +1,12 @@
 import type { SitterProfile } from '../entities';
-import { ClientProfileResponse } from '../User/models/ClientProfileResponse';
 
-/**
- * Client stats shown on the profile page.
- * All fields exist on ClientProfile — this is a named subset for component props.
- */
-export type ClientStats = Pick<
-  ClientProfileResponse,
-  'totalBookings' | 'rating' | 'reviewCount' | 'responseRate' | 'backgroundCheckCompleted'
->;
+export interface ClientStats {
+  totalBookings: number;
+  rating: number;
+  reviewCount: number;
+  responseRate: number;
+  backgroundCheckCompleted: boolean;
+}
 
 /**
  * Sitter stats shown on the dashboard/profile.
