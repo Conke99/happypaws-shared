@@ -16,7 +16,6 @@ import {
   Gender,
   IndoorOutdoor,
 } from '../models/common/CommonAnswersPets';
-import type { PetProfileResponse } from '../models/PetProfileResponse';
 
 export class PetProfileEntity implements PetProfile {
   @IsOptional()
@@ -132,7 +131,7 @@ export class PetProfileEntity implements PetProfile {
   @IsDate()
   updatedAt?: Date;
 
-  constructor(partial?: Partial<PetProfileResponse>) {
+  constructor(partial?: Partial<PetProfile>) {
     Object.assign(this, partial);
   }
 }
