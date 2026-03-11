@@ -1,4 +1,4 @@
-import { IsEnum, IsString } from 'class-validator';
+import { IsArray, IsEnum, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
 import { UserRole } from '../../constants';
 import type BaseUserResponse from '../models/BaseUserResponse';
@@ -20,10 +20,10 @@ export class BaseUserEntity implements Omit<BaseUserResponse, 'accessToken'> {
   @Expose()
   email!: string;
 
-  @IsString()
+  @IsArray()
+  @IsEnum(UserRole, { each: true })
   @Expose()
-  @IsEnum(UserRole)
-  role!: UserRole;
+  roles!: UserRole[];
 
   constructor(partial?: Partial<BaseUserResponse>) {
     Object.assign(this, partial);
