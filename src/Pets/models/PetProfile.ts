@@ -5,8 +5,8 @@ import {
   EnergyLevel,
   Gender,
   IndoorOutdoor,
-} from "./common/CommonAnswersPets";
-import { PetType } from "./PetType";
+} from './common/CommonAnswersPets';
+import { PetType } from './PetType';
 
 export default interface PetProfile {
   id?: string;

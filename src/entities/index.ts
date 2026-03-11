@@ -1,4 +1,4 @@
-export * from './user.entity';
+export * from '../User/models/BaseUser';
 export * from './client-profile.entity';
 export * from './sitter-profile.entity';
 export * from './pet.entity';

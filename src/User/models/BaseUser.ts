@@ -1,8 +1,16 @@
-export default interface BaseUser {
+import { UserRole } from '../../constants';
+
+export interface User {
   id: string;
-  accessToken?: string;
+  email: string;
   firstName: string;
   lastName: string;
-  email: string;
-  role: string;
+  password?: string;
+  phone?: string | null;
+  photoUrl?: string | null;
+  roles: UserRole[];
+  memberSince: Date;
+  verified?: boolean;
+  createdAt: Date;
+  updatedAt: Date;
 }

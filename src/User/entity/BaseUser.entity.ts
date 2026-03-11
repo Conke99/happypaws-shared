@@ -1,13 +1,9 @@
 import { IsEnum, IsString } from 'class-validator';
 import { Expose } from 'class-transformer';
 import { UserRole } from '../../constants';
-import type BaseUser from '../models/BaseUser';
+import type BaseUserResponse from '../models/BaseUserResponse';
 
-export class BaseUserEntity implements BaseUser {
-  @IsString()
-  @Expose()
-  accessToken!: string;
-
+export class BaseUserEntity implements Omit<BaseUserResponse, 'accessToken'> {
   @IsString()
   @Expose()
   id!: string;
@@ -29,7 +25,7 @@ export class BaseUserEntity implements BaseUser {
   @IsEnum(UserRole)
   role!: UserRole;
 
-  constructor(partial?: Partial<BaseUser>) {
+  constructor(partial?: Partial<BaseUserResponse>) {
     Object.assign(this, partial);
   }
 }
