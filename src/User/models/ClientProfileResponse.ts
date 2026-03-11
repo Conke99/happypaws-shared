@@ -1,6 +1,13 @@
 import { User } from './BaseUser';
 
-export interface ClientProfileResponse extends Omit<User, 'password' | 'roles'> {
+export interface ClientProfileResponse extends Omit<
+  User,
+  'password' | 'roles'
+> {
+  phone: string | null;
+  photoUrl: string | null;
+  verified: boolean;
+
   bio: string | null;
   city: string | null;
   state: string | null;
