@@ -36,7 +36,7 @@ export class PetProfileEntity implements PetProfile {
 
   @IsOptional()
   @IsString()
-  breed?: string;
+  breed?: string | null;
 
   @IsOptional()
   @IsBoolean()
@@ -44,19 +44,19 @@ export class PetProfileEntity implements PetProfile {
 
   @IsOptional()
   @IsString()
-  age?: string;
+  age?: string | null;
 
   @IsOptional()
   @IsEnum(Gender)
-  gender?: Gender;
+  gender?: Gender | null;
 
   @IsOptional()
   @IsString()
-  description?: string;
+  description?: string | null;
 
   @IsOptional()
   @IsString()
-  photoUrl?: string;
+  photoUrl?: string | null;
 
   @IsOptional()
   @IsArray()
@@ -69,59 +69,59 @@ export class PetProfileEntity implements PetProfile {
 
   @IsOptional()
   @IsEnum(CommonAnswersPets)
-  houseTrained?: CommonAnswersPets;
+  houseTrained?: CommonAnswersPets | null;
 
   @IsOptional()
   @IsEnum(CommonAnswersPets)
-  friendlyWithChildren?: CommonAnswersPets;
+  friendlyWithChildren?: CommonAnswersPets | null;
 
   @IsOptional()
   @IsEnum(CommonAnswersPets)
-  friendlyWithDogs?: CommonAnswersPets;
+  friendlyWithDogs?: CommonAnswersPets | null;
 
   @IsOptional()
   @IsEnum(CommonAnswersPets)
-  friendlyWithCats?: CommonAnswersPets;
+  friendlyWithCats?: CommonAnswersPets | null;
 
   @IsOptional()
   @IsEnum(EnergyLevel)
-  energyLevel?: EnergyLevel;
+  energyLevel?: EnergyLevel | null;
 
   @IsOptional()
   @IsString()
-  canBeLeftAlone?: string;
+  canBeLeftAlone?: string | null;
 
   @IsOptional()
   @IsString()
-  additionalInfo?: string;
+  additionalInfo?: string | null;
 
   @IsOptional()
   @IsEnum(CommonAnswersPets)
-  litterTrained?: CommonAnswersPets;
+  litterTrained?: CommonAnswersPets | null;
 
   @IsOptional()
   @IsEnum(IndoorOutdoor)
-  indoorOutdoor?: IndoorOutdoor;
+  indoorOutdoor?: IndoorOutdoor | null;
 
   @IsOptional()
   @IsEnum(CommonAnswersPets)
-  declawed?: CommonAnswersPets;
+  declawed?: CommonAnswersPets | null;
 
   @IsOptional()
   @IsString()
-  petSpecies?: string;
+  petSpecies?: string | null;
 
   @IsOptional()
   @IsString()
-  habitatType?: string;
+  habitatType?: string | null;
 
   @IsOptional()
   @IsEnum(CanBeHandled)
-  canBeHandled?: CanBeHandled;
+  canBeHandled?: CanBeHandled | null;
 
   @IsOptional()
   @IsString()
-  specialCare?: string;
+  specialCare?: string | null;
 
   @IsOptional()
   @IsDate()
