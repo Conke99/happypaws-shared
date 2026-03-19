@@ -3,6 +3,26 @@ import { IsArray, IsOptional, IsString } from 'class-validator';
 import { UpdateSitterProfileRequest } from '../models/UpdateSitterProfileRequest';
 
 export class UpdateSitterProfileDto implements UpdateSitterProfileRequest {
+  // user fields
+
+  @IsOptional()
+  @IsString()
+  firstName?: string;
+
+  @IsOptional()
+  @IsString()
+  lastName?: string;
+
+  @IsOptional()
+  @IsString()
+  phone?: string | null;
+
+  @IsOptional()
+  @IsString()
+  photoUrl?: string | null;
+
+  // sitter fields
+
   @IsOptional()
   @IsString()
   @Expose()

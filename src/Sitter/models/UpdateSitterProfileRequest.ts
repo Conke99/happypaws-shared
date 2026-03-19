@@ -1,4 +1,11 @@
 export interface UpdateSitterProfileRequest {
+  // user fields
+  firstName?: string;
+  lastName?: string;
+  phone?: string | null;
+  photoUrl?: string | null;
+
+  // sitter fields
   username?: string | null;
   bio?: string | null;
   education?: string | null;
