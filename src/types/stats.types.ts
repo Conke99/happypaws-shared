@@ -1,5 +1,3 @@
-import type { SitterProfile } from '../entities';
-
 export interface ClientStats {
   totalBookings: number;
   rating: number;
@@ -8,12 +6,11 @@ export interface ClientStats {
   backgroundCheckCompleted: boolean;
 }
 
-/**
- * Sitter stats shown on the dashboard/profile.
- * Picks shared fields from SitterProfile; adds computed aggregates not stored on the profile.
- */
-export type SitterStats = Pick<SitterProfile, 'rating' | 'reviewCount' | 'responseRate'> & {
+export interface SitterStats {
   totalBookings: number;
   completedBookings: number;
   totalEarnings: number;
-};
+  rating: number;
+  reviewCount: number;
+  responseRate: number;
+}

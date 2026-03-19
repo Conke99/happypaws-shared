@@ -8,5 +8,4 @@ export * from './payment-method.entity';
 export * from './payout-account.entity';
 export * from './pet.entity';
 export * from './review.entity';
-export * from './sitter-profile.entity';
 export * from './transaction.entity';
