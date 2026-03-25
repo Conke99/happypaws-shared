@@ -4,6 +4,8 @@ export interface UpdateSitterProfileRequest {
   lastName?: string;
   phone?: string | null;
   photoUrl?: string | null;
+  lat?: number | null;
+  lng?: number | null;
 
   // sitter fields
   username?: string | null;

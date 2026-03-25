@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsArray, IsOptional, IsString } from 'class-validator';
+import { IsArray, IsNumber, IsOptional, IsString } from 'class-validator';
 import { UpdateSitterProfileRequest } from '../models/UpdateSitterProfileRequest';
 
 export class UpdateSitterProfileDto implements UpdateSitterProfileRequest {
@@ -77,6 +77,14 @@ export class UpdateSitterProfileDto implements UpdateSitterProfileRequest {
   @IsArray()
   @Expose()
   homeEnvironment?: string[];
+
+  @IsOptional()
+  @IsNumber()
+  lat?: number | null;
+
+  @IsOptional()
+  @IsNumber()
+  lng?: number | null;
 
   constructor(partial?: Partial<UpdateSitterProfileRequest>) {
     Object.assign(this, partial);
