@@ -11,6 +11,8 @@ export interface User {
   roles: UserRole[];
   memberSince: Date;
   verified?: boolean;
+  lat?: number | null;
+  lng?: number | null;
   createdAt: Date;
   updatedAt: Date;
 }
