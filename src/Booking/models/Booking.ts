@@ -1,4 +1,9 @@
-export type BookingStatus = 'pending' | 'confirmed' | 'completed' | 'cancelled';
+export enum BookingStatus {
+  PENDING = 'pending',
+  CONFIRMED = 'confirmed',
+  COMPLETED = 'completed',
+  CANCELLED = 'cancelled',
+}
 
 export interface Booking {
   id: string;
