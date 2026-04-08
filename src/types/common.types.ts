@@ -10,8 +10,6 @@ export interface SearchFiltersType {
   endTime: string;
   selectedPets: string[];
   priceRange: [number, number];
-  hasHouse: boolean;
-  hasApartment: boolean;
   hasFencedYard: boolean;
   allowsDogsOnFurniture: boolean;
 }
@@ -57,12 +55,7 @@ export interface ServicesPricingData {
 }
 
 /** Sort options for sitter search results */
-export type SortOption =
-  | 'rating'
-  | 'price_low'
-  | 'price_high'
-  | 'review_count'
-  | 'distance';
+export type SortOption = 'rating' | 'price_low' | 'price_high' | 'review_count' | 'distance';
 
 /**
  * Sitter card data for search results.
@@ -70,13 +63,7 @@ export type SortOption =
  */
 export interface SitterDisplay extends Pick<
   SitterProfileResponse,
-  | 'id'
-  | 'firstName'
-  | 'lastName'
-  | 'photoUrl'
-  | 'bio'
-  | 'serviceTypes'
-  | 'petPreferences'
+  'id' | 'firstName' | 'lastName' | 'photoUrl' | 'bio' | 'serviceTypes' | 'petPreferences'
 > {
   price: number;
   reviewSnippet: string;
