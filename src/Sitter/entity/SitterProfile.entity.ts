@@ -1,5 +1,6 @@
 import { Expose } from 'class-transformer';
-import { IsArray, IsDate, IsOptional, IsString } from 'class-validator';
+import { IsArray, IsDate, IsEnum, IsOptional, IsString } from 'class-validator';
+import { ServiceType } from '../../Services/services';
 import { SitterProfile } from '../models/SitterProfile';
 
 export class SitterProfileEntity implements SitterProfile {
@@ -43,7 +44,8 @@ export class SitterProfileEntity implements SitterProfile {
 
   @IsArray()
   @Expose()
-  serviceTypes!: string[];
+  @IsEnum(ServiceType, { each: true })
+  serviceTypes!: ServiceType[];
 
   @IsArray()
   @Expose()

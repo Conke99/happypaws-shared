@@ -4,9 +4,11 @@ import {
   IsBoolean,
   IsDate,
   IsEmail,
+  IsEnum,
   IsOptional,
   IsString,
 } from 'class-validator';
+import { ServiceType } from '../../Services/services';
 import {
   SitterAvailability,
   SitterPricing,
@@ -94,7 +96,8 @@ export class SitterProfileResponseEntity implements SitterProfileResponse {
 
   @IsArray()
   @Expose()
-  serviceTypes!: string[];
+  @IsEnum(ServiceType, { each: true })
+  serviceTypes!: ServiceType[];
 
   @IsArray()
   @Expose()
