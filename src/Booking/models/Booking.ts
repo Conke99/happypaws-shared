@@ -5,6 +5,7 @@ export enum BookingStatus {
   CANCELLED = 'cancelled',
 }
 
+// TODO: Create entity & DTO for this
 export interface Booking {
   id: string;
   clientId: string;
