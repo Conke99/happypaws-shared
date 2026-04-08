@@ -1,4 +1,4 @@
-import { BookingStatus } from '../constants';
+import { BookingStatus } from '../Booking/models/Booking';
 import { ServiceType } from '../Services/services';
 
 export interface Booking {
