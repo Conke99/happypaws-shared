@@ -1,3 +1,4 @@
+import { ExperienceLevel } from '../../Experience/experience';
 import { ServiceType } from '../../Services/services';
 
 export interface SitterProfile {
@@ -5,7 +6,7 @@ export interface SitterProfile {
   username: string | null;
   bio: string | null;
   education: string | null;
-  experience: string | null;
+  experience: ExperienceLevel | null;
   profilePhotoUrl: string | null;
   galleryImages: string[];
   verification: string | null;
