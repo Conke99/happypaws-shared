@@ -1,5 +1,13 @@
 import { Expose } from 'class-transformer';
-import { IsArray, IsNumber, IsOptional, IsString } from 'class-validator';
+import {
+  IsArray,
+  IsEnum,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
+import { ExperienceLevel } from '../../Experience/experience';
+import { ServiceType } from '../../Services/services';
 import { UpdateSitterProfileRequest } from '../models/UpdateSitterProfileRequest';
 
 export class UpdateSitterProfileDto implements UpdateSitterProfileRequest {
@@ -39,9 +47,9 @@ export class UpdateSitterProfileDto implements UpdateSitterProfileRequest {
   education?: string | null;
 
   @IsOptional()
-  @IsString()
+  @IsEnum(ExperienceLevel)
   @Expose()
-  experience?: string | null;
+  experience?: ExperienceLevel | null;
 
   @IsOptional()
   @IsString()
@@ -60,8 +68,9 @@ export class UpdateSitterProfileDto implements UpdateSitterProfileRequest {
 
   @IsOptional()
   @IsArray()
+  @IsEnum(ServiceType, { each: true })
   @Expose()
-  serviceTypes?: string[];
+  serviceTypes?: ServiceType[];
 
   @IsOptional()
   @IsArray()

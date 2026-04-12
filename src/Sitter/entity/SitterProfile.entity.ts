@@ -1,5 +1,6 @@
 import { Expose } from 'class-transformer';
 import { IsArray, IsDate, IsEnum, IsOptional, IsString } from 'class-validator';
+import { ExperienceLevel } from '../../Experience/experience';
 import { ServiceType } from '../../Services/services';
 import { SitterProfile } from '../models/SitterProfile';
 
@@ -25,8 +26,9 @@ export class SitterProfileEntity implements SitterProfile {
 
   @IsString()
   @IsOptional()
+  @IsEnum(ExperienceLevel)
   @Expose()
-  experience!: string;
+  experience!: ExperienceLevel | null;
 
   @IsString()
   @IsOptional()

@@ -8,6 +8,7 @@ import {
   IsOptional,
   IsString,
 } from 'class-validator';
+import { ExperienceLevel } from '../../Experience/experience';
 import { ServiceType } from '../../Services/services';
 import {
   SitterAvailability,
@@ -75,10 +76,10 @@ export class SitterProfileResponseEntity implements SitterProfileResponse {
   @Expose()
   education!: string | null;
 
-  @IsString()
+  @IsEnum(ExperienceLevel)
   @IsOptional()
   @Expose()
-  experience!: string | null;
+  experience!: ExperienceLevel | null;
 
   @IsString()
   @IsOptional()
