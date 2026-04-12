@@ -8,6 +8,9 @@ export interface User {
   password?: string;
   phone?: string | null;
   photoUrl?: string | null;
+  country?: string | null;
+  city?: string | null;
+  postalCode?: string | null;
   roles: UserRole[];
   memberSince: Date;
   verified?: boolean;

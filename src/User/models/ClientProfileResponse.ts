@@ -7,11 +7,7 @@ export interface ClientProfileResponse extends Omit<
   phone: string | null;
   photoUrl: string | null;
   verified: boolean;
-
   bio: string | null;
-  city: string | null;
-  state: string | null;
-  zipCode: string | null;
   emergencyContactName: string | null;
   emergencyContactRelationship: string | null;
   emergencyContactPhone: string | null;

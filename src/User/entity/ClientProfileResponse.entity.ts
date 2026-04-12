@@ -60,17 +60,17 @@ export class ClientProfileResponseEntity implements ClientProfileResponse {
   @IsString()
   @IsOptional()
   @Expose()
-  city!: string | null;
+  city?: string | null;
 
   @IsString()
   @IsOptional()
   @Expose()
-  state!: string | null;
+  country?: string | null;
 
   @IsString()
   @IsOptional()
   @Expose()
-  zipCode!: string | null;
+  postalCode?: string | null;
 
   @IsString()
   @IsOptional()
