@@ -42,18 +42,6 @@ export interface ServiceConfig {
   description: string;
 }
 
-/** Sitter's full services & pricing configuration */
-export interface ServicesPricingData {
-  boarding: ServiceConfig;
-  houseSitting: ServiceConfig;
-  dropIn: ServiceConfig;
-  walking: ServiceConfig;
-  weekendRate: number;
-  holidayRate: number;
-  /** Percentage discount for multiple pets */
-  multiPetDiscount: number;
-}
-
 /** Sort options for sitter search results */
 export type SortOption = 'rating' | 'price_low' | 'price_high' | 'review_count' | 'distance';
 

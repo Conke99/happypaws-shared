@@ -1,4 +1,5 @@
 import { User } from '../../entities';
+import { ServiceType } from '../../Services/services';
 import { SitterProfile } from './SitterProfile';
 
 export interface SitterProfileResponse
@@ -22,7 +23,7 @@ export interface SitterAvailability {
 
 export interface SitterPricing {
   id: string;
-  service: string;
+  service: ServiceType;
   priceMin: number;
   priceMax: number;
 }
