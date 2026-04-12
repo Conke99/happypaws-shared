@@ -8,8 +8,8 @@ export interface UpdateClientProfileRequest {
   // clients table
   bio?: string | null;
   city?: string | null;
-  state?: string | null;
-  zipCode?: string | null;
+  country?: string | null;
+  postalCode?: string | null;
   emergencyContactName?: string | null;
   emergencyContactRelationship?: string | null;
   emergencyContactPhone?: string | null;
