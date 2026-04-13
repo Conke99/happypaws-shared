@@ -51,12 +51,6 @@ export class ClientProfileResponseEntity implements ClientProfileResponse {
   @Expose()
   updatedAt!: Date;
 
-  // client-specific fields
-  @IsString()
-  @IsOptional()
-  @Expose()
-  bio!: string | null;
-
   @IsString()
   @IsOptional()
   @Expose()
@@ -71,6 +65,12 @@ export class ClientProfileResponseEntity implements ClientProfileResponse {
   @IsOptional()
   @Expose()
   postalCode?: string | null;
+
+  // client-specific fields
+  @IsString()
+  @IsOptional()
+  @Expose()
+  bio!: string | null;
 
   @IsString()
   @IsOptional()

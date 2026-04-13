@@ -28,11 +28,11 @@ export class UpdateClientProfileDto implements UpdateClientProfileRequest {
 
   @IsOptional()
   @IsString()
-  state?: string | null;
+  country?: string | null;
 
   @IsOptional()
   @IsString()
-  zipCode?: string | null;
+  postalCode?: string | null;
 
   @IsOptional()
   @IsString()
